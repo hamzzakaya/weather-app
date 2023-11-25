@@ -10,7 +10,7 @@ function App() {
     setInputValue(event.target.value);
   };
 
-  const Data = () => {
+  const fetchWeatherData = () => {
     const apiKey = '7fe26b31267b3aa4860cd2205f2d5142'; 
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=${apiKey}`;
 
@@ -36,10 +36,10 @@ function App() {
         style={{ padding: '8px', marginRight: '8px' }}
       />
       <br />
-      <button onClick={Data} style={{ padding: '8px', borderRadius:'10px'}}>Search</button>
+      <button onClick={fetchWeatherData} style={{ padding: '8px', borderRadius:'10px'}}>Search</button>
       <div>
         <h2 style={{fontSize:'40px'}}>{inputValue}</h2>
-        <h4 style={{fontSize:'40px'}}>{typeof temperature === 'number' ? `${temperature} °C` : temperature}</h4>                 
+        <h4 style={{fontSize:'40px'}}>{temperature} </h4>                 
       </div>
     </div>
   );
